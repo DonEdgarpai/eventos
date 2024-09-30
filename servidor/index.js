@@ -15,7 +15,7 @@ const puerto = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Configuración para servir archivos estáticos desde el directorio 'uploads'
+// Configuración para servir archivos estáticos (imagenes) desde el directorio 'uploads'
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use('/api/eventos', eventosRoutes);

@@ -86,3 +86,10 @@ CREATE TABLE resenas (
     FOREIGN KEY (evento_id) REFERENCES eventos(id) ON DELETE CASCADE,
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE SET NULL
 );
+CREATE TABLE imagenes_evento (
+    id INT AUTO_INCREMENT PRIMARY KEY, 
+    evento_id INT NOT NULL,              
+    url VARCHAR(255) NOT NULL,           
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  
+    FOREIGN KEY (evento_id) REFERENCES eventos(id)  
+);
